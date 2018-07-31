@@ -5,7 +5,11 @@
     font-family: sans-serif;
 }
 
-h1{
+h1 {
     color:rgb(106, 207, 211);
     text-align: center;
+}
+
+p {
+    margin: 10px;
 }
