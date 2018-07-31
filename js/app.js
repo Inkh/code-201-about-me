@@ -1,5 +1,15 @@
 'use strict';
 
+//Execute after DOM is loaded. Equivalent to document.ready on jQuery.
+window.onload=function(){
+  //Event listener for button press. Opens up test question for user.
+  let button = document.getElementById('userTestButton');
+  if (button){
+    button.addEventListener('click', userTest);
+    console.log('iwork');
+  }
+};
+
 //Declare user score for later use
 let score = 0;
 
@@ -9,9 +19,10 @@ const userTest = () => {
   if (userResponse === 'yes'){
     console.log(`User answers ${userResponse.toUpperCase()}! They're cool!`);
     alert('Correct! You\'re awesome. Let\'s continue to the real thing now!');
+
+    //Generate instructions and corresponding button.
     document.getElementById('sortingHat').innerHTML = 'Just kidding. One more thing! Let us choose your school first!';
     document.getElementById('userSort').innerHTML = '<button onClick="sortUser()">Sort now!</button>';
-
   } else if (userResponse === 'no'){
     console.log(`User answers ${userResponse.toUpperCase()}... They won't go far.`);
     alert('What!? No!? Abort! Abort! You are not worthy to continue!');
@@ -29,12 +40,12 @@ const sortUser = () => {
   let userSchoolCap = userSchool.charAt(0).toUpperCase() + userSchool.slice(1);
 
   //Check user input for desired school. Add point accordingly.
-  if (userSchool !== 'ravenclaw' || userSchool !== 'hufflepuff' || userSchool !== 'slytherin' || userSchool !== 'gryffindor'){
-    alert(`Ooo...kay..? I guess 1 point to ${userSchoolCap}`);
-    score += 1;
-  } else{
+  if (userSchool === 'ravenclaw' || userSchool === 'hufflepuff' || userSchool === 'slytherin' || userSchool === 'gryffindor'){
     alert(`Wooo! 50 points to ${userSchoolCap}!`);
     score += 50;
+  } else{
+    alert(`Ooo...kay..? I guess 1 point to ${userSchoolCap}`);
+    score += 1;
   }
   console.log(`User score is now ${score}`);
 };
