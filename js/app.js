@@ -2,11 +2,30 @@
 
 //Execute after DOM is loaded. Equivalent to document.ready on jQuery.
 window.onload=function(){
-  //Event listener for button press. Opens up test question for user.
-  let button = document.getElementById('userTestButton');
-  if (button){
-    button.addEventListener('click', userTest);
-    console.log('iwork');
+  //Grab user name if user inserted any text. If not, prompt for reload.
+  let userName = prompt('First thing\'s first. What would you like me to call you?');
+  if (userName) {
+    userName = userName.toLowerCase();
+    console.log(`User's name is ${userName}`);
+
+    //Properly capitalize userName.
+    let userNameCap = userName.charAt(0).toUpperCase() + userName.slice(1);
+    alert(`Awesome. Welcome to my page ${userNameCap}!`);
+  } else{
+    alert('Sorry, I did not quite get that. Could you please try again?');
+    location.reload();
+  }
+
+  //Event listener for test button press. Opens up test question for user.
+  let userTestButton = document.getElementById('userTestButton');
+  if (userTestButton){
+    userTestButton.addEventListener('click', userTest);
+  }
+
+  //Event listener for sorting. Opens up sorting prompt for user.
+  let sortingButton = document.getElementById('userSort');
+  if (sortingButton){
+    sortingButton.addEventListener('click', sortUser);
   }
 };
 
@@ -17,18 +36,18 @@ let score = 0;
 const userTest = () => {
   let userResponse = prompt('Do you like cuttlefish? Answer Yes or No.').toLowerCase();
   if (userResponse === 'yes'){
-    console.log(`User answers ${userResponse.toUpperCase()}! They're cool!`);
+    console.log(`User answers ${userResponse.toUpperCase()} to liking Cuttlefish. They're cool!`);
     alert('Correct! You\'re awesome. Let\'s continue to the real thing now!');
 
     //Generate instructions and corresponding button.
     document.getElementById('sortingHat').innerHTML = 'Just kidding. One more thing! Let us choose your school first!';
-    document.getElementById('userSort').innerHTML = '<button onClick="sortUser()">Sort now!</button>';
+    document.getElementById('userSort').innerHTML = '<button id="sortUser()">Sort now!</button>';
   } else if (userResponse === 'no'){
-    console.log(`User answers ${userResponse.toUpperCase()}... They won't go far.`);
-    alert('What!? No!? Abort! Abort! You are not worthy to continue!');
+    console.log(`User answers ${userResponse.toUpperCase()} to Cuttlefish... They won't go far.`);
+    alert('You are such a rebel. Unfortunately I cannot let you go on with that response.');
   } else{
     console.log(`User answers with ${userResponse}... I don't even..`);
-    alert('Really? You can\'t follow some simple instruction!? Start over!');
+    alert('Ummm... I was expecting a yes or no. Try again!');
   }
 };
 
@@ -44,7 +63,7 @@ const sortUser = () => {
     alert(`Wooo! 50 points to ${userSchoolCap}!`);
     score += 50;
   } else{
-    alert(`Ooo...kay..? I guess 1 point to ${userSchoolCap}`);
+    alert(`Ooo...kay..? I guess 1 point to ${userSchoolCap}?`);
     score += 1;
   }
   console.log(`User score is now ${score}`);
