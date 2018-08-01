@@ -11,7 +11,7 @@ window.onload=function(){
   //Event listener for sorting. Opens up sorting prompt for user.
   let sortingButton = document.getElementById('userSort');
   if (sortingButton){
-    sortingButton.addEventListener('click', sortUser);
+    sortingButton.addEventListener('click', wizTest);
   }
 
   //Event listener for personal quiz. Opens up quiz about me.
@@ -44,10 +44,6 @@ const userTest = () => {
   if (userResponse === 'yes'){
     console.log(`${userNameCap} answers ${userResponse.toUpperCase()} to liking Cuttlefish. They're cool!`);
     alert('Correct! You\'re awesome. Let\'s continue to the real thing now!');
-
-    //Generate instructions and corresponding button.
-    document.getElementById('sortingHat').innerHTML = 'Just kidding. One more thing! Let us choose your school first!';
-    document.getElementById('userSort').innerHTML = '<button id="sortUser()">Sort now!</button>';
   } else if (userResponse === 'no'){
     console.log(`User answers ${userResponse.toUpperCase()} to Cuttlefish... They won't go far.`);
     alert('You are such a rebel. Unfortunately I cannot let you go on with that response.');
@@ -57,25 +53,8 @@ const userTest = () => {
   }
 };
 
-//Function for sorting the user into a school.
-const sortUser = () => {
-  let userSchool = prompt('Do you belong to Gryffindor, Slytherin, Hufflepuff, or Ravenclaw?').toLowerCase();
+//////////////////////////////////////FUNCTION FOR QUIZ ABOUT ME//////////////////////////////////////////////////
 
-  //Capitalize first letter in string for more formal look
-  let userSchoolCap = userSchool.charAt(0).toUpperCase() + userSchool.slice(1);
-
-  //Check user input for desired school. Add point accordingly.
-  if (userSchool === 'ravenclaw' || userSchool === 'hufflepuff' || userSchool === 'slytherin' || userSchool === 'gryffindor'){
-    alert(`Wooo! ${userNameCap} earned 50 points to ${userSchoolCap}!`);
-    score += 50;
-  } else{
-    alert(`Ooo...kay..? I guess 1 point to ${userSchoolCap}?`);
-    score += 1;
-  }
-  console.log(`User score is now ${score}`);
-};
-
-//Function for quiz about me.
 const myQuiz = () => {
   alert('These are a series of yes and no questions. Please answer accordingly!');
 
@@ -143,10 +122,79 @@ const myQuiz = () => {
   console.log(`User's response to novel question is ${novelResponse}`);
 
   if (novelResponse === 'yes'){
-    alert(`Awesome ${userNameCap}! One of my favorite novels growing up was Harry Potter! I actually waited for my acceptance letter when I was 10. But I guess I'm just a talentless muggle :(`);
+    alert('You do? Nice! One of my favorite novels growing up was Harry Potter! I actually waited for my acceptance letter when I was 10. But I guess I\'m just a talentless muggle :(');
+    
+    //Bonus Question block!
+    let wizResponse = prompt('So now the next question for you is... Do you like Harry Potter too?').toLowerCase();
+    console.log(`User's response to potter question is ${wizResponse}`);
+
+    //If user answers yes, will redirect to another function dedicated to HP knowledge.
+    if (wizResponse === 'yes'){
+      alert('Woohoo!! Have you ever wanted to choose your house? Well... Here\'s your chance! ...Sorta. Refer to the below instructions to get started!');
+      //Generate instructions and corresponding button.
+      document.getElementById('sortingHat').innerHTML = 'Ready to test your knowledge on Care of Magical Creatures? But first, let us choose your affiliation!';
+      document.getElementById('userSort').innerHTML = '<button id="wizTest()">Sort now!</button>';
+    } else{
+      alert('Oh. Well, carry on then.');
+    }
   } else if (novelResponse === 'no'){
     alert('Perhaps you like nonfiction better? Either way, I think books are a great medium for expanding one\'s horizons, which is why I try to finish a book every month.');
   } else{
     alert('Please answer with yes or no! Click the button to try again.');
+  }
+};
+//////////////////////////////////////////////////////END OF QUIZZ ABOUT ME///////////////////////////////////////////////////
+
+
+//Function for sorting user and questionnaire for point gains!
+const wizTest = () => {
+  let userSchool = prompt('Do you belong to Gryffindor, Slytherin, Hufflepuff, or Ravenclaw?').toLowerCase();
+
+  //Capitalize first letter in string for more formal look
+  var userSchoolCap = userSchool.charAt(0).toUpperCase() + userSchool.slice(1);
+  console.log(`User chose ${userSchool}`);
+
+  //Check user input for desired school. Add point accordingly.
+  if (userSchool === 'ravenclaw' || userSchool === 'hufflepuff' || userSchool === 'slytherin' || userSchool === 'gryffindor'){
+    alert(`Wooo! ${userNameCap} earned 50 points to ${userSchoolCap}!`);
+    score += 50;
+  } else{
+    alert(`Ooo...kay..? I guess 1 point to ${userSchoolCap}?`);
+    score += 1;
+  }
+  console.log(`User score is now ${score}`);
+
+  //Begin knowledge quiz.
+  alert(`Whoopie! Let's get started ${userNameCap}. The house of ${userSchoolCap} is just a few points shy from winning this year!`);
+
+  //Question 1 about Hippo
+  let hippoResponse = prompt('Is it safe to approach a Hippogriph and tease it? Yes or No.').toLowerCase();
+  console.log(`User response to hippo question is ${hippoResponse}`);
+
+  if (hippoResponse === 'no'){
+    alert(`That would be correct, ${userNameCap}. Hippogriphs are proud creatures, and let's not forget what happened to Malfoy... 100 points to ${userSchoolCap}!`);
+    score += 100;
+    console.log(`User score is now ${score}`);
+  } else{
+    alert(`Any answer other than a no is... Is just... Well, bad. Minus 50 points from ${userSchoolCap}.`);
+    score -= 50;
+    console.log(`User score is now ${score}`);
+  }
+
+  //Question 2 about Fire crabs
+  let crabResponse = prompt('Question 2! Yes or No. Does a wizard need a special license to sell or export Fire crabs?');
+  console.log(`User response to crab question is ${crabResponse}.`);
+
+  if (crabResponse === 'yes'){
+    alert(`Correct! Fire crabs can be especially dangerous if not handled properly. 50 points to ${userSchoolCap}!`);
+    score += 50;
+    console.log(`User score is now ${score}`);
+  } else{
+    alert(`Looks like you need to retake the Fourth year. Minus 50 points from ${userSchoolCap}.`);
+    score -= 50;
+    console.log(`User score is now ${score}`);
+    if (score < 0){
+      alert(`Stop. Stop! You're now down ${Math.abs(score)} points. You're costing ${userSchoolCap} too many points! I'm afraid I must expel you from this instance! ..Get it? Instance! `);
+    }
   }
 };
