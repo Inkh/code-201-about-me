@@ -7,7 +7,7 @@ let kantoPokemonCount = 151;
 let pokemonGuess = false;
 
 //Checker for how many guesses user took
-var userGuessCount = 1;
+var userGuessCount = 0;
 
 //Pokemon guessing Game
 while (pokemonGuess === false){
@@ -27,6 +27,7 @@ while (pokemonGuess === false){
   } else{
     pokemonGuess = true;
     console.log(`User inputs ${userPokemonGuess} for pokemon species guess.`);
+    userGuessCount++;
     if (userGuessCount > 3){
       alert(`Nice. Well, it only took you ${userGuessCount} tries...`);
     } else{
