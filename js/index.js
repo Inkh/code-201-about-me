@@ -70,7 +70,7 @@ alert(`Now a trivia question for you, ${userNameCap}. Name all the most notable 
 let gryffindorCharacters = ['harry', 'hermione', 'ron', 'albus', 'sirius', 'remus', 'fred', 'george'];
 let correctGuessCounter = 0;
 
-for (let j = 0;j < 6;j++){
+for (let j = 0;j < 5;j++){
   let userGuess = prompt('Guess now!').toLowerCase();
   if (gryffindorCharacters.includes(userGuess)){
     alert(`Indeed! ${userGuess} was an important character!`);
