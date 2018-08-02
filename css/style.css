@@ -17,11 +17,6 @@ p {
     margin: 10px;
 }
 
-.unordered li{
-    list-style: square;
-    display: list-item;
-}
-
 ul { 
     list-style-type: disc; 
     list-style-position: outside; 

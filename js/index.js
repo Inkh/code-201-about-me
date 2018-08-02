@@ -85,7 +85,29 @@ for (let j = 0;j < 6;j++){
   // var remainder = gryffindorCharacters.join(', ');
 }
 
-alert(`Done deal, ${userNameCap}. Here are some potential other characters: ${gryffindorCharacters.join(', ')}. I would give you 50 points for the ${correctGuessCounter} people you got right, but school has already ended. So tough luck!`);
+alert(`Done deal, ${userNameCap}. Here are some potential other characters: ${gryffindorCharacters.join(', ')}. I would give you ${correctGuessCounter*50} points for the ${correctGuessCounter} people you got right, but school has already ended. So tough luck!`);
+
+alert(`Okay okay. Thanks ${userNameCap} for still going through these without killing your browser. As a reward, here's one more!`);
 
 //Array of Questions for personal quiz
-let personalQuiz = ['Practice question! Is PHP the best language ever? :)','Do you think practicing algorithms are paramount to acing a tech interview?','Do you find marine life fascinating?','Have you ever been to Taiwan?','Do you enjoy listening to music?','Do you enjoy reading fiction novels?'];
+let personalQuiz = ['Do you like cuttlefish?', 'Practice question! Is PHP the best language ever? :)','Do you think practicing algorithms are paramount to acing a tech interview?','Do you find marine life fascinating?','Have you ever been to Taiwan?','Do you enjoy listening to music?','Do you enjoy reading fiction novels?'];
+
+let personalQuizAnswer = [['Yippie!', 'B-b-but how can you not!?'], ['Umm.. Sure! I am always down to learn new things everyday!', 'To each their own! It is quite a running joke among my friends that are Facebook employees!'], ['Yeah! I agree that it is super important. I do it all the time!', 'Really? That is news to me... I practice algos almost everyday!'], ['Super! I actually wanted to be a marine biologist since I was very young. I am planning to use my programming skills in the future to do ocean related work. I just do not know what yet!', 'Hmm.. That is too bad... I love all sorts of ocean critters!'],['Awesome! I am from Taiwan and I know for a fact that the food there is tough to beat!', 'Aw... You should really clear out a schedule to visit the island! But then I am Taiwanese, so I am biased..'], ['Cool! I listen to music all the time, and my favorite genre is rock! I\'ve been in multiple bands as a bassist and have been loving every minute of it!', 'Oh no! I think you are missing out on a lot! Music definitely helps relieve stress or helps pump you up on occasions when you need an extra oomph! That is a big reason why I have played and practiced on a lot of mainstream instruments!'], ['You do? Nice! One of my favorite novels growing up was Harry Potter! I actually waited for my acceptance letter when I was 10. But I guess I\'m just a talentless muggle :(', 'Perhaps you like nonfiction more? Either way, I think books are a great medium for expanding one\'s horizons, which is why I try to finish a book every month.']];
+
+//Personal Quiz loop
+for (let k = 0;k < personalQuiz.length;k++){
+  let userResponse = prompt(personalQuiz[k]).toLowerCase();
+  console.log(`User's response is ${userResponse}`);
+  if (userResponse[0] === 'y'){
+    console.log(`Current question: ${personalQuiz[k]}, User's response: ${userResponse}`);
+    alert(`${personalQuizAnswer[k][0]}`);
+  } else if (userResponse[0] === 'n'){
+    console.log(`Current question: ${personalQuiz[k]}, User's response: ${userResponse}`);
+    alert(`${personalQuizAnswer[k][1]}`);
+  } else {
+    alert('Please fill in a valid YES or NO response and try again..');
+    k--;
+  }
+}
+
+alert('Wooowee... That was a handful huh... Well, enjoy the rest of the site!');
