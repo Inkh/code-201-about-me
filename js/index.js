@@ -19,28 +19,6 @@ function closure() {
       }
     }
   }
-<<<<<<< HEAD
-}
-
-alert('Since I love Harry Potter, I am going to force you through this quiz... For now.');
-
-//User score
-let score = 0;
-
-let wizQuiz = [
-  'Do you belong to Gryffindor, Slytherin, Hufflepuff, or Ravenclaw?',
-  'Is it safe to approach a Hippogriph and tease it? Yes or No.',
-  'Question 2! Yes or No. Does a wizard need a special license to sell or export Fire crabs?',
-  'Question 3! What are Flobberworms more inclined to eat: Lettuce or steak?'
-];
-
-let quizAnswer = [
-  ['ravenclaw', 'hufflepuff', 'slytherin', 'gryffindor'],
-  ['no', 'That would be correct. Hippogriphs are proud creatures, and let\'s not forget what happened to Malfoy...','any answer other than a no is... Is just... Well, bad.'],
-  ['yes', 'Correct! Fire crabs can be especially dangerous if not handled properly.', 'looks like you need to retake the Fourth year.' ],
-  ['lettuce', 'Yup, Flobberworms are herbivorous and love to eat. So be careful not to overfeed!','really? The lack of teeth should have given you a hint about their eating habits...']
-];
-=======
 
   function quizAboutHp() {
     alert('Since I love Harry Potter, I am going to force you through this quiz... For now.');
@@ -48,9 +26,19 @@ let quizAnswer = [
     //User score
     let score = 0;
 
-    let wizQuiz = ['Do you belong to Gryffindor, Slytherin, Hufflepuff, or Ravenclaw?', 'Is it safe to approach a Hippogriph and tease it? Yes or No.', 'Question 2! Yes or No. Does a wizard need a special license to sell or export Fire crabs?', 'Question 3! What are Flobberworms more inclined to eat: Lettuce or steak?'];
+    let wizQuiz = [
+      'Do you belong to Gryffindor, Slytherin, Hufflepuff, or Ravenclaw?',
+      'Is it safe to approach a Hippogriph and tease it? Yes or No.',
+      'Question 2! Yes or No. Does a wizard need a special license to sell or export Fire crabs?',
+      'Question 3! What are Flobberworms more inclined to eat: Lettuce or steak?'
+    ];
 
-    let quizAnswer = [['ravenclaw', 'hufflepuff', 'slytherin', 'gryffindor'], ['no', 'That would be correct. Hippogriphs are proud creatures, and let\'s not forget what happened to Malfoy...','any answer other than a no is... Is just... Well, bad.'], ['yes', 'Correct! Fire crabs can be especially dangerous if not handled properly.', 'looks like you need to retake the Fourth year.' ],['lettuce', 'Yup, Flobberworms are herbivorous and love to eat. So be careful not to overfeed!','really? The lack of teeth should have given you a hint about their eating habits...']];
+    let quizAnswer = [
+      ['ravenclaw', 'hufflepuff', 'slytherin', 'gryffindor'],
+      ['no', 'That would be correct. Hippogriphs are proud creatures, and let\'s not forget what happened to Malfoy...','any answer other than a no is... Is just... Well, bad.'],
+      ['yes', 'Correct! Fire crabs can be especially dangerous if not handled properly.', 'looks like you need to retake the Fourth year.' ],
+      ['lettuce', 'Yup, Flobberworms are herbivorous and love to eat. So be careful not to overfeed!','really? The lack of teeth should have given you a hint about their eating habits...']
+    ];
 
     //Quiz on Harry Potter knowledge.
     for (let i = 0;i < wizQuiz.length;i++){
@@ -83,7 +71,6 @@ let quizAnswer = [
         break;
       }
     }
->>>>>>> f737bc900b8487275beb1aee565a208cd11d228f
 
     if (score === wizQuiz.length * 50){
       alert(`You've done a splendid job, ${userName}! You've earned a perfect score of ${score}, and have led ${userSchool} to victory! Looking forward to seeing you next year. Now off you go!`);
@@ -119,41 +106,6 @@ let quizAnswer = [
     alert(`Okay okay. Thanks ${userName} for still going through these without killing your browser. As a reward, here's one more!`);
   }
 
-<<<<<<< HEAD
-//Array of Questions for personal quiz
-let personalQuiz = [
-  'Do you like cuttlefish?',
-  'Practice question! Is PHP the best language ever? :)',
-  'Do you think practicing algorithms are paramount to acing a tech interview?',
-  'Do you find marine life fascinating?',
-  'Have you ever been to Taiwan?',
-  'Do you enjoy listening to music?',
-  'Do you enjoy reading novels?'
-];
-
-let personalQuizAnswer = [
-  ['Yippie!', 'B-b-but how can you not!?'],
-  ['Umm.. Sure! I am always down to learn new things everyday!', 'To each their own! It is quite a running joke among my friends that are Facebook employees!'],
-  ['Yeah! I agree that it is super important. I do it all the time!', 'Really? That is news to me... I practice algos almost everyday!'],
-  ['Super! I actually wanted to be a marine biologist since I was very young. I am planning to use my programming skills in the future to do ocean related work. I just do not know what yet!', 'Hmm.. That is too bad... I love all sorts of ocean critters!'],
-  ['Awesome! I am from Taiwan and I know for a fact that the food there is tough to beat!', 'Aw... You should really clear out a schedule to visit the island! But then I am Taiwanese, so I am biased..'],
-  ['Cool! I listen to music all the time, and my favorite genre is rock! I\'ve been in multiple bands as a bassist and have been loving every minute of it!', 'Oh no! I think you are missing out on a lot! Music definitely helps relieve stress or helps pump you up on occasions when you need an extra oomph! That is a big reason why I have played and practiced on a lot of mainstream instruments!'],
-  ['You do? Nice! One of my favorite novels growing up was Harry Potter! I actually waited for my acceptance letter when I was 10. But I guess I\'m just a talentless muggle :(', 'Perhaps you like nonfiction more? Either way, I think books are a great medium for expanding one\'s horizons, which is why I try to finish a book every month.']
-];
-
-//Personal Quiz loop
-for (let k = 0;k < personalQuiz.length;k++){
-  let userResponse = prompt(personalQuiz[k]).toLowerCase();
-  if (userResponse[0] === 'y'){
-    alert(`${personalQuizAnswer[k][0]}`);
-  } else if (userResponse[0] === 'n'){
-    alert(`${personalQuizAnswer[k][1]}`);
-  } else {
-    alert('Please fill in a valid YES or NO response and try again..');
-    k--;
-  }
-  console.log(`Current question: ${personalQuiz[k]}, User's response: ${userResponse}`);
-=======
   helloUser();
   quizAboutHp();
 }
@@ -163,9 +115,25 @@ closure();
 
 function quizAboutMe() {
   //Array of Questions for personal quiz
-  let personalQuiz = ['Do you like cuttlefish?', 'Practice question! Is PHP the best language ever? :)','Do you think practicing algorithms are paramount to acing a tech interview?','Do you find marine life fascinating?','Have you ever been to Taiwan?','Do you enjoy listening to music?','Do you enjoy reading fiction novels?'];
+  let personalQuiz = [
+    'Do you like cuttlefish?',
+    'Practice question! Is PHP the best language ever? :)',
+    'Do you think practicing algorithms are paramount to acing a tech interview?',
+    'Do you find marine life fascinating?',
+    'Have you ever been to Taiwan?',
+    'Do you enjoy listening to music?',
+    'Do you enjoy reading fiction novels?'
+  ];
 
-  let personalQuizAnswer = [['Yippie!', 'B-b-but how can you not!?'], ['Umm.. Sure! I am always down to learn new things everyday!', 'To each their own! It is quite a running joke among my friends that are Facebook employees!'], ['Yeah! I agree that it is super important. I do it all the time!', 'Really? That is news to me... I practice algos almost everyday!'], ['Super! I actually wanted to be a marine biologist since I was very young. I am planning to use my programming skills in the future to do ocean related work. I just do not know what yet!', 'Hmm.. That is too bad... I love all sorts of ocean critters!'],['Awesome! I am from Taiwan and I know for a fact that the food there is tough to beat!', 'Aw... You should really clear out a schedule to visit the island! But then I am Taiwanese, so I am biased..'], ['Cool! I listen to music all the time, and my favorite genre is rock! I\'ve been in multiple bands as a bassist and have been loving every minute of it!', 'Oh no! I think you are missing out on a lot! Music definitely helps relieve stress or helps pump you up on occasions when you need an extra oomph! That is a big reason why I have played and practiced on a lot of mainstream instruments!'], ['You do? Nice! One of my favorite novels growing up was Harry Potter! I actually waited for my acceptance letter when I was 10. But I guess I\'m just a talentless muggle :(', 'Perhaps you like nonfiction more? Either way, I think books are a great medium for expanding one\'s horizons, which is why I try to finish a book every month.']];
+  let personalQuizAnswer = [
+    ['Yippie!', 'B-b-but how can you not!?'],
+    ['Umm.. Sure! I am always down to learn new things everyday!', 'To each their own! It is quite a running joke among my friends that are Facebook employees!'],
+    ['Yeah! I agree that it is super important. I do it all the time!', 'Really? That is news to me... I practice algos almost everyday!'],
+    ['Super! I actually wanted to be a marine biologist since I was very young. I am planning to use my programming skills in the future to do ocean related work. I just do not know what yet!', 'Hmm.. That is too bad... I love all sorts of ocean critters!'],
+    ['Awesome! I am from Taiwan and I know for a fact that the food there is tough to beat!', 'Aw... You should really clear out a schedule to visit the island! But then I am Taiwanese, so I am biased..'],
+    ['Cool! I listen to music all the time, and my favorite genre is rock! I\'ve been in multiple bands as a bassist and have been loving every minute of it!', 'Oh no! I think you are missing out on a lot! Music definitely helps relieve stress or helps pump you up on occasions when you need an extra oomph! That is a big reason why I have played and practiced on a lot of mainstream instruments!'],
+    ['You do? Nice! One of my favorite novels growing up was Harry Potter! I actually waited for my acceptance letter when I was 10. But I guess I\'m just a talentless muggle :(', 'Perhaps you like nonfiction more? Either way, I think books are a great medium for expanding one\'s horizons, which is why I try to finish a book every month.']
+  ];
 
   //Personal Quiz loop
   for (let k = 0;k < personalQuiz.length;k++){
@@ -184,7 +152,6 @@ function quizAboutMe() {
   }
 
   alert('Wooowee... That was a handful huh... Well, enjoy the rest of the site!');
->>>>>>> f737bc900b8487275beb1aee565a208cd11d228f
 }
 
 quizAboutMe();
