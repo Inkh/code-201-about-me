@@ -1,19 +1,25 @@
 body {
     vertical-align: top;
     font-family: sans-serif;
+    background-color: rgb(197, 194, 194);
+}
+
+.wrapper {
+    width: 80%;
+    background-color: rgb(243, 243, 243);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 h1 {
     font-size: 30px;
-    color:rgb(106, 207, 211);
+    color:rgb(255, 255, 255);
     text-align: center;
 }
 
 h2 {
     font-size: 18px;
-    margin: 10px;
-}
-p {
     margin: 10px;
 }
 
@@ -27,4 +33,13 @@ ol {
     list-style-type: decimal; 
     list-style-position: outside;
     margin-left: 30px;
+}
+
+nav {
+    margin-bottom: 10px;
+    padding-top: 20px;
+    background-color: rgb(2, 45, 85);
+    height: 75px;
+    text-align: center;
+    box-sizing: border-box;
 }
